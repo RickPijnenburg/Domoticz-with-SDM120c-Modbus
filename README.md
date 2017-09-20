@@ -8,14 +8,14 @@ Then follow the following steps:
 ## Step 1: Install libmodbus and SDM120C software <br />
 Make a telnet connection to the Pi <br />
 ```
-sudo apt-get install libmodbus5 libmodbus-dev git <br />
-git clone https://github.com/gianfrdp/SDM120C.git <br />
-cd SDM120C <br />
-make clean && make <br />
-sudo make install <br />
-cd ..  <br />
+sudo apt-get install libmodbus5 libmodbus-dev git
+git clone https://github.com/gianfrdp/SDM120C.git
+cd SDM120C
+make clean && make
+sudo make install
+cd ..
 ```
-<br />
+
 ## Step 2: Add hardware adn devices in Domoticz <br />
 Go to the hardware page and select by type Dummy (Does nothing, use for virtual switches only) <br />
 And name it SDM120C, if you like <br />
