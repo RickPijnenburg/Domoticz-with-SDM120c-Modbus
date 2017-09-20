@@ -38,7 +38,7 @@ Copy the following text: <br />
 #==============================================================================
 SERVER="http://127.0.0.1:8084"   #server location
 IDXTGroep3=10	#id of your device in Domoticz for total + power
-IDGroep3=1		#id of device (modbus id)
+IDGroep3=1	#id of device (modbus id)
 
 IDXTGroep4=11
 IDGroep4=2
