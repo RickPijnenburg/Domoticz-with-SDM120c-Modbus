@@ -5,23 +5,22 @@ You need a Raspberry Pi with Domoticz and a Modbus to USB converter
 
 Then follow the following steps:
 
-Step 1: Install libmodbus and SDM120C software <br />
-'''
-sudo apt-get install libmodbus5 libmodbus-dev git
-git clone https://github.com/gianfrdp/SDM120C.git
-cd SDM120C
-make clean && make
-sudo make install
-cd .. 
-'''
-Step 2: Add hardware adn devices in Domoticz <br />
+###### Step 1: Install libmodbus and SDM120C software <br />
+sudo apt-get install libmodbus5 libmodbus-dev git <br />
+git clone https://github.com/gianfrdp/SDM120C.git <br />
+cd SDM120C <br />
+make clean && make <br />
+sudo make install <br />
+cd ..  <br />
+ <br />
+####### Step 2: Add hardware adn devices in Domoticz <br />
 Go to the hardware page and select by type Dummy (Does nothing, use for virtual switches only) <br />
 And name it SDM120C, if you like <br />
 Create now a virtual sensor with the name of the first SDM120C meter with type Electric(Instant+counter) <br />
 Do this for every SDM120C meter you connect <br />
 Remember the ID of every SDM120C you add <br />
-
-Step 3: Script for reading and putting it in Domoticz <br />
+ <br />
+####### Step 3: Script for reading and putting it in Domoticz <br />
 Copy the following text: <br />
 '''
 #!/bin/bash
@@ -131,8 +130,8 @@ And save it as a .sh file <br />
 This file get the information of 4 meters, so change it for the total of meters you need <br />
 Also change the text /dev/ttyUSB1 to the USB which is the Modbus-to-USB converter <br />
 Copy this file to the folder: /home/pi/domoticz/scripts/SDM120C <br />
-
-Step 4: Automatic readings <br />
+ <br />
+###### Step 4: Automatic readings <br />
 Connect to the Pi with Telnet <br />
 'crontab -e' <br />
 Add the following text at the end of the file <br />
