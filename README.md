@@ -6,13 +6,16 @@ You need a Raspberry Pi with Domoticz and a Modbus to USB converter
 Then follow the following steps:
 
 ## Step 1: Install libmodbus and SDM120C software <br />
+Make a telnet connection to the Pi <br />
+```
 sudo apt-get install libmodbus5 libmodbus-dev git <br />
 git clone https://github.com/gianfrdp/SDM120C.git <br />
 cd SDM120C <br />
 make clean && make <br />
 sudo make install <br />
 cd ..  <br />
- <br />
+```
+<br />
 ## Step 2: Add hardware adn devices in Domoticz <br />
 Go to the hardware page and select by type Dummy (Does nothing, use for virtual switches only) <br />
 And name it SDM120C, if you like <br />
@@ -22,7 +25,7 @@ Remember the ID of every SDM120C you add <br />
  <br />
 ## Step 3: Script for reading and putting it in Domoticz <br />
 Copy the following text: <br />
-'''
+```
 #!/bin/bash
 #title           :SDM120C Modbus
 #description     :Read current from sdm120 and sends it to Domoticz.
@@ -125,7 +128,7 @@ URL=$SERVER"/json.htm?type=command&param=udevice&idx="$IDXTGroep11"&nvalue=0&sva
 #echo $URL;
 #printf %s "$URL" | xxd;
 curl $URL #send to domoticz
-'''
+```
 And save it as a .sh file <br />
 This file get the information of 4 meters, so change it for the total of meters you need <br />
 Also change the text /dev/ttyUSB1 to the USB which is the Modbus-to-USB converter <br />
@@ -133,13 +136,13 @@ Copy this file to the folder: /home/pi/domoticz/scripts/SDM120C <br />
  <br />
 ## Step 4: Automatic readings <br />
 Connect to the Pi with Telnet <br />
-'crontab -e' <br />
+`crontab -e` <br />
 Add the following text at the end of the file <br />
-'''
+```
 PATH=~/bin:/usr/bin/:/bin
 SHELL=/bin/bash
 */1 * * * * /home/pi/domoticz/scripts/SDM120C/nameofthefile.sh >/dev/null 2>&1
-'''
+```
 For more information about crontab: http://www.adminschoice.com/crontab-quick-reference <br />
 Change the name of the file to what you name it <br />
 
