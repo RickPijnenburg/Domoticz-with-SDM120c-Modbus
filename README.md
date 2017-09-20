@@ -16,7 +16,7 @@ sudo make install
 cd ..
 ```
 
-## Step 2: Add hardware adn devices in Domoticz <br />
+## Step 2: Add hardware and devices in Domoticz <br />
 Go to the hardware page and select by type Dummy (Does nothing, use for virtual switches only) <br />
 And name it SDM120C, if you like <br />
 Create now a virtual sensor with the name of the first SDM120C meter with type Electric(Instant+counter) <br />
