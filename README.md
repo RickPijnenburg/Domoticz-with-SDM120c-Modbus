@@ -143,7 +143,8 @@ PATH=~/bin:/usr/bin/:/bin
 SHELL=/bin/bash
 */1 * * * * /home/pi/domoticz/scripts/SDM120C/nameofthefile.sh >/dev/null 2>&1
 ```
-For more information about crontab: http://www.adminschoice.com/crontab-quick-reference <br />
+
 Change the name of the file to what you name it <br />
+For more information about crontab: http://www.adminschoice.com/crontab-quick-reference <br />
 
 Now it will work <br />
