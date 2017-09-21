@@ -1,5 +1,5 @@
-# Domoticz-on-Pi3-with-SDM120c-Modbus
-Install SDM120c Modbus in Domoticz on Raspberry Pi 3
+# Domoticz on Pi3 with SDM120C Modbus
+This file describes how to install SDM120c Modbus in Domoticz on Raspberry Pi 3
 
 You need a Raspberry Pi with Domoticz and a Modbus to USB converter
 
